@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Edit Record</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{css/main.css}" href="../static/css/main.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{css/footer.css}" href="../static/css/footer.css" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script th:src="@{js/footer.js}" src="../static/js/footer.js"></script>
+</head>
+<body>
+<main>
+    <h1>Edit Record</h1>
+    <form method="post"
+          th:action="@{UpdateStudent}" action="StudentDetails.html"
+          th:object="${form}">
+        <div th:if="${#fields.hasErrors('*')}">
+            <h3 class="error">Input Errors</h3>
+            <ul>
+                <li th:each="e: ${#fields.errors('*')}" th:text="${e}"
+                    class="error">Input Error</li>
+            </ul>
+        </div>
+        <input type="hidden" th:field="*{id}">
+        <h2>Student Name</h2>
+        <p>
+            <label for="first" class="group_label">First Name</label><br>
+            <input id="first" type="text" th:field="*{firstName}" value="Bart"/>
+            <span th:if="${#fields.hasErrors('firstName')}"
+                  class="error">&larr;&nbsp;<span th:errors="*{firstName}">First Name Error</span></span>
+        </p>
+        <p>
+            <label for="last" class="group_label">Last Name</label><br>
+            <input id="last" type="text" th:field="*{lastName}" value="Simpson"/>
+            <span th:if="${#fields.hasErrors('lastName')}"
+                  class="error">&larr;&nbsp;<span th:errors="*{lastName}">Last Name Error</span></span>
+        </p>
+        <h2>Student Info:</h2>
+        <p>
+            <label for="prog" class="group_label">Program</label><br>
+            <select id="prog" th:field="*{programName}">
+                <option th:each="p: ${programs}"
+                        th:value="${p}" th:text="${p}">Computer Programmer</option>
+            </select>
+            <span th:if="${#fields.hasErrors('programName')}" th:errors="*{programName}"
+                  class="error">&larr;&nbsp;<span th:errors="*{programName}">Program Name Error</span></span>
+        </p>
+        <p>
+            <label class="group_label">Year</label><br>
+            <span th:each="y: ${#numbers.sequence(1,3)}">
+               <label><input type="radio" name="programYear" value="1"
+                             th:field="*{programYear}" th:value="${y}"><span th:text="${y}">1</span></label>
+            </span>
+            <!--/*-->
+            <label><input type="radio" name="programYear" value="2">2</label>
+            <label><input type="radio" name="programYear" value="3">3</label>
+            <!--*/-->
+            <span th:if="${#fields.hasErrors('programYear')}"
+                  class="error">&larr;&nbsp;<span th:errors="*{programYear}">Program Year Error</span></span>
+        </p>
+        <p>
+            <label class="group_label">Options</label><br>
+            <label><input type="checkbox" th:field="*{programCoop}" th:value="yes"/>Co-op</label>
+            <label><input type="checkbox" th:field="*{programInternship}" th:value="yes"/>Internship</label>
+        </p>
+        <p>
+            <input type="reset" value="Clear"/>
+            <input type="submit" value="Send"/>
+        </p>
+    </form>
+    <p><a href="Index.html" th:href="@{Index}">Index</a></p>
+    <p><a href="ListStudents.html" th:href="@{ListStudents}">List Students</a></p>
+</main>
+</body>
+</html>

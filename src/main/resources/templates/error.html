@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/main.css}" href="../static/css/main.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/error.css}" href="../static/css/error.css" rel="stylesheet" type="text/css"/>
+    <title>Error</title>
+</head>
+<body>
+<main>
+    <h1>Student Data Error</h1>
+    <h2>Error: <span th:text="${error}">Not Found</span></h2>
+    <table>
+        <tr>
+            <th>Date</th>
+            <td th:text="${timestamp}">Sun Feb 10 11:52:33 EST 2019</td>
+        </tr>
+        <tr>
+            <th>Path</th>
+            <td th:text="${path}">/blah/balh/balh</td>
+        </tr>
+        <tr>
+            <th>Error</th>
+            <td th:text="${error}">Not Found</td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td th:text="${status}">404</td>
+        </tr>
+        <tr>
+            <th>Message</th>
+            <td th:text="${message}">No message available</td>
+        </tr>
+    </table>
+    <p><a href="Index.html" th:href="@{/Index}">Index</a></p>
+</main>
+</body>
+</html>

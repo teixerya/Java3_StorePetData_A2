@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Delete Record</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{css/main.css}" href="../static/css/main.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{css/footer.css}" href="../static/css/footer.css" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script th:src="@{js/footer.js}" src="../static/js/footer.js"></script>
+</head>
+<body>
+<main>
+    <h1>Delete Record</h1>
+    <p class="message">Do you really want to remove this record?</p>
+    <h2>Record Data:</h2>
+    <div th:object="${student}">
+        <p>
+            <label class="group_label">First Name:</label>
+            <span class="output" th:text="*{firstName}">Bart</span>
+        </p>
+        <p>
+            <label class="group_label">Last Name:</label>
+            <span class="output" th:text="*{lastName}">Simpson</span>
+        </p>
+        <p>
+            <label class="group_label">Program:</label>
+            <span class="output" th:text="*{programName}">Computer Programmer</span>
+        </p>
+        <p>
+            <label class="group_label">Year:</label>
+            <span class="output" th:text="*{programYear}">1</span>
+        </p>
+        <p>
+            <label class="group_label">Co-op:</label>
+            <span class="output" th:text="*{programCoop}">yes</span>
+        </p>
+        <p>
+            <label class="group_label">Internship:</label>
+            <span class="output" th:text="*{programInternship}">no</span>
+        </p>
+    </div>
+    <form method="post"
+          th:action="@{RemoveStudent}" action="ListStudents.html">
+        <input type="hidden" name="id" th:value="${student.id}">
+        <input type="submit" value="Remove Record">
+    </form>
+
+    <p><a href="Index.html" th:href="@{Index}">Index</a></p>
+    <p><a href="AddStudent.html" th:href="@{AddStudent}">Add Student</a></p>
+    <p><a href="ListStudents.html" th:href="@{ListStudents}">List Students</a></p>
+</main>
+</body>
+</html>

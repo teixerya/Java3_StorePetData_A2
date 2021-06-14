@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>List All</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{css/main.css}" href="../static/css/main.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{css/footer.css}" href="../static/css/footer.css" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script th:src="@{js/footer.js}" src="../static/js/footer.js"></script>
+</head>
+<body>
+<main>
+    <h1>List All</h1>
+    <table th:unless="${#lists.isEmpty(students)}">
+        <tr>
+            <th>Count</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Options</th>
+        </tr>
+        <tr th:each="s,c: ${students}">
+            <td th:text="${c.count}">1</td>
+
+            <td th:text="${s.firstName}">Bart</td>
+            <td th:text="${s.lastName}">Simpson</td>
+            <td>
+                <a href="StudentDetails.html" th:href="@{StudentDetails/{id}(id=${s.id})}">Details</a>
+                &nbsp;|&nbsp;
+                <a href="EditStudent.html" th:href="@{EditStudent(id=${s.id})}">Edit</a>
+                &nbsp;|&nbsp;
+                <a href="DeleteStudent.html" th:href="@{DeleteStudent(id=${s.id})}">Delete</a>
+            </td>
+        </tr>
+        <!--/*-->
+        <tr>
+            <td>2</td>
+            <td>Lisa</td>
+            <td>Simpson</td>
+            <td>
+                <a href="StudentDetails.html">Details</a>
+                &nbsp;|&nbsp;
+                <a href="EditStudent.html">Edit</a>
+                &nbsp;|&nbsp;
+                <a href="DeleteStudent.html">Delete</a>
+            </td>
+        </tr>
+        <!--*/-->
+    </table>
+    <p class="message" th:if="${#lists.isEmpty(students)}">No student data</p>
+    <p><a href="Index.html" th:href="@{Index}">Index</a></p>
+    <p><a href="AddStudent.html" th:href="@{AddStudent}">Add Student</a></p>
+    <p><a href="ListStudents.html" th:href="@{DeleteAll}">DeleteAll</a></p>
+</main>
+</body>
+</html>
