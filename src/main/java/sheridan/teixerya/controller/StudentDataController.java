@@ -21,8 +21,8 @@ public class StudentDataController {
 
     private static final String[] programs = {
             "--- Select Program ---",
-            "Computer Programmer", "Systems Technology",
-            "Engineering Technician", "Systems Technician"};
+            "Cat", "Dog",
+            "Rabbit"};
 
     private final StudentDataService studentDataService;
 

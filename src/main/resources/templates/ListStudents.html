@@ -14,16 +14,16 @@
     <h1>List All</h1>
     <table th:unless="${#lists.isEmpty(students)}">
         <tr>
-            <th>Count</th>
+            <th>Pet Record Number</th>
             <th>First Name</th>
-            <th>Last Name</th>
+
             <th>Options</th>
         </tr>
         <tr th:each="s,c: ${students}">
             <td th:text="${c.count}">1</td>
 
             <td th:text="${s.firstName}">Bart</td>
-            <td th:text="${s.lastName}">Simpson</td>
+
             <td>
                 <a href="StudentDetails.html" th:href="@{StudentDetails/{id}(id=${s.id})}">Details</a>
                 &nbsp;|&nbsp;

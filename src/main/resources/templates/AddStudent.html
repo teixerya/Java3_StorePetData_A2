@@ -11,7 +11,7 @@
 </head>
 <body>
 <main>
-    <h1>Add Student</h1>
+    <h1>Add Pet</h1>
     <form method="post"
           th:action="@{InsertStudent}" action="ConfirmInsert.html"
           th:object="${form}">
@@ -23,20 +23,20 @@
                     class="error">Input Error</li>
             </ul>
         </div>
-        <h2>Student Name</h2>
+        <h2>Pet Name</h2>
         <p>
-            <label for="first" class="group_label">First Name</label><br>
+            <label for="first" class="group_label">Name</label><br>
             <input id="first" type="text" th:field="*{firstName}"/>
             <span th:if="${#fields.hasErrors('firstName')}"
                   class="error">&larr;&nbsp;<span th:errors="*{firstName}">First Name Error</span></span>
         </p>
         <p>
-            <label for="last" class="group_label">Last Name</label><br>
+            <label for="last" class="group_label">Pet Last Name</label><br>
             <input id="last" type="text" th:field="*{lastName}"/>
             <span th:if="${#fields.hasErrors('lastName')}"
                   class="error">&larr;&nbsp;<span th:errors="*{lastName}">Last Name Error</span></span>
         </p>
-        <h2>Student Info</h2>
+        <h2>Pet Info</h2>
         <p>
             <label for="prog" class="group_label">Program</label><br>
             <select id="prog" th:field="*{programName}">
@@ -46,10 +46,10 @@
                   class="error">&larr;&nbsp;<span th:errors="*{programName}">Program Name Error</span></span>
         </p>
         <p>
-            <label class="group_label">Year</label><br>
-            <span th:each="y: ${#numbers.sequence(1,3)}">
-               <label><input type="radio" name="programYear" value="1"
-                             th:field="*{programYear}" th:value="${y}"><span th:text="${y}">1</span></label>
+            <label class="group_label">Gender</label><br>
+            <span th:each="y: ${#numbers.sequence(1,2)}">
+               <label><input type="radio" name="programYear" value="2"
+                             th:field="*{programYear}" th:value="${y}"><span th:text="${y}"></span></label>
             </span>
             <!--/*-->
             <label><input type="radio" name="programYear" value="2">2</label>

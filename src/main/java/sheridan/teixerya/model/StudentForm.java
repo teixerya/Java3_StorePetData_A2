@@ -7,6 +7,7 @@ public class StudentForm implements Serializable {
 
     private int id = 0;
 
+
     @NotBlank
     @Size(max = 30)
     @Pattern(regexp = "[A-Za-z]*")
@@ -18,13 +19,15 @@ public class StudentForm implements Serializable {
     private String lastName = "";
 
     @NotBlank
-    @Pattern(regexp = "(Computer Programmer|Systems Technology|Engineering Technician|Systems Technician)?")
-    private String programName = "";
+    @Pattern(regexp = "(Cat|Dog|Rabbit)?")
+    private String programName = "Dog";
 
     @NotNull
     @Min(1)
-    @Max(3)
+    @Max(2)
     private int programYear = 1;
+
+    private String gender = "Male";
 
     private boolean programCoop = false;
 
@@ -71,6 +74,20 @@ public class StudentForm implements Serializable {
 
     public void setProgramYear(int year) {
         this.programYear = year;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(int year) {
+        if(year == 1){
+            gender = "Male";
+        }else{
+            gender = "Female";
+        }
+
+
     }
 
     public boolean isProgramCoop() {
