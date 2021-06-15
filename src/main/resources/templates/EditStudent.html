@@ -30,15 +30,10 @@
             <span th:if="${#fields.hasErrors('firstName')}"
                   class="error">&larr;&nbsp;<span th:errors="*{firstName}">First Name Error</span></span>
         </p>
-        <p>
-            <label for="last" class="group_label">Last Name</label><br>
-            <input id="last" type="text" th:field="*{lastName}" value="Simpson"/>
-            <span th:if="${#fields.hasErrors('lastName')}"
-                  class="error">&larr;&nbsp;<span th:errors="*{lastName}">Last Name Error</span></span>
-        </p>
+
         <h2>Student Info:</h2>
         <p>
-            <label for="prog" class="group_label">Program</label><br>
+            <label for="prog" class="group_label">Pet Kind</label><br>
             <select id="prog" th:field="*{programName}">
                 <option th:each="p: ${programs}"
                         th:value="${p}" th:text="${p}">Computer Programmer</option>
@@ -47,22 +42,20 @@
                   class="error">&larr;&nbsp;<span th:errors="*{programName}">Program Name Error</span></span>
         </p>
         <p>
-            <label class="group_label">Year</label><br>
-            <span th:each="y: ${#numbers.sequence(1,3)}">
-               <label><input type="radio" name="programYear" value="1"
-                             th:field="*{programYear}" th:value="${y}"><span th:text="${y}">1</span></label>
-            </span>
-            <!--/*-->
-            <label><input type="radio" name="programYear" value="2">2</label>
-            <label><input type="radio" name="programYear" value="3">3</label>
-            <!--*/-->
+            <label class="group_label">Gender</label><br>
+
+
+            <label><input type="radio" name="programYear" value="Male">Male</label>
+            <label><input type="radio" name="programYear" value="Female">Female</label>
+
+
             <span th:if="${#fields.hasErrors('programYear')}"
                   class="error">&larr;&nbsp;<span th:errors="*{programYear}">Program Year Error</span></span>
         </p>
         <p>
-            <label class="group_label">Options</label><br>
-            <label><input type="checkbox" th:field="*{programCoop}" th:value="yes"/>Co-op</label>
-            <label><input type="checkbox" th:field="*{programInternship}" th:value="yes"/>Internship</label>
+            <label class="group_label">Vaccination</label><br>
+            <label><input type="checkbox" th:field="*{programCoop}" th:value="yes"/>Vaccinated</label>
+
         </p>
         <p>
             <input type="reset" value="Clear"/>

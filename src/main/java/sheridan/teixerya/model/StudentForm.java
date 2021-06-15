@@ -14,17 +14,9 @@ public class StudentForm implements Serializable {
     private String firstName = "";
 
     @NotBlank
-    @Size(max = 30)
-    @Pattern(regexp = "[A-Za-z]*")
-    private String lastName = "";
-
-    @NotBlank
     @Pattern(regexp = "(Cat|Dog|Rabbit)?")
     private String programName = "Dog";
 
-//    @NotNull
-//    @Min(1)
-//    @Max(2)
     private String programYear = "Female";
 
     private String gender = "Male";
@@ -52,13 +44,7 @@ public class StudentForm implements Serializable {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     public String getProgramName() {
         return programName;

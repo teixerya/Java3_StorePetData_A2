@@ -21,8 +21,7 @@ public class StudentDataServiceJpaImpl implements StudentDataService {
 
     private static void copyFormToEntity(StudentForm form, StudentEntityJpa student){
         //student.setId(form.getId());
-        student.setFirstName(form.getFirstName());
-        student.setLastName(form.getLastName());
+        student.setFirstName(form.getFirstName().trim());
         student.setProgramName(form.getProgramName());
         student.setProgramYear(form.getProgramYear());
         student.setProgramCoop(form.isProgramCoop());
@@ -31,8 +30,7 @@ public class StudentDataServiceJpaImpl implements StudentDataService {
 
     private static void copyEntityToForm(StudentEntityJpa student, StudentForm form){
         form.setId(student.getId());
-        form.setFirstName(student.getFirstName());
-        form.setLastName(student.getLastName());
+        form.setFirstName(student.getFirstName().trim());
         form.setProgramName(student.getProgramName());
         form.setProgramYear(student.getProgramYear());
         form.setProgramCoop(student.isProgramCoop());

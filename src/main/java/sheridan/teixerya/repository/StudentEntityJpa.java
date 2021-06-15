@@ -15,9 +15,6 @@ public class StudentEntityJpa {
     @Column(name = "first_name")
     private String firstName = "";
 
-    @Column(name = "last_name")
-    private String lastName = "";
-
     @Column(name = "program_name")
     private String programName = "";
 
@@ -47,14 +44,6 @@ public class StudentEntityJpa {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getProgramName() {
