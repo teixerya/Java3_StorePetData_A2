@@ -1,7 +1,7 @@
 package sheridan.teixerya.model;
 
-import java.io.Serializable;
 import javax.validation.constraints.*;
+import java.io.Serializable;
 
 public class StudentForm implements Serializable {
 

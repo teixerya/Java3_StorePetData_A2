@@ -1,6 +1,7 @@
 package sheridan.teixerya.controller;
 
-
+import sheridan.teixerya.model.StudentForm;
+import sheridan.teixerya.service.StudentDataService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -9,8 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import sheridan.teixerya.model.StudentForm;
-import sheridan.teixerya.service.StudentDataService;
+
 
 import java.util.List;
 
