@@ -25,7 +25,7 @@ public class StudentForm implements Serializable {
 //    @NotNull
 //    @Min(1)
 //    @Max(2)
-    private String programYear = "1";
+    private String programYear = "Female";
 
     private String gender = "Male";
 

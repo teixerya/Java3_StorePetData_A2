@@ -31,7 +31,7 @@
                   class="error">&larr;&nbsp;<span th:errors="*{firstName}">First Name Error</span></span>
         </p>
         <p>
-            <label for="last" class="group_label">Pet Last Name</label><br>
+            <label for="last" class="group_label">Temporary Last Name</label><br>
             <input id="last" type="text" th:field="*{lastName}"/>
             <span th:if="${#fields.hasErrors('lastName')}"
                   class="error">&larr;&nbsp;<span th:errors="*{lastName}">Last Name Error</span></span>
@@ -40,7 +40,7 @@
         <p>
             <label for="prog" class="group_label">Pet Kind</label><br>
             <select id="prog" th:field="*{programName}">
-                <option th:each="p: ${programs}" th:value="${p}" th:text="${p}">--- Select Program ---</option>
+                <option th:each="p: ${programs}" th:value="${p}" th:text="${p}">--- Select Pet ---</option>
             </select>
             <span th:if="${#fields.hasErrors('programName')}"
                   class="error">&larr;&nbsp;<span th:errors="*{programName}">Program Name Error</span></span>
@@ -48,12 +48,14 @@
         <p>
             <label class="group_label">Gender</label><br>
 
-            <span>
+<!--            <span>-->
 <!--            <span th:each="y: ${#numbers.sequence(1,2)}">-->
-               <label><input type="radio" name="programYear" value="Male"
-                             th:field="*{programYear}" th:value="${y}"><span th:text="${y}"></span>Male</label>
-            </span>
+<!--               <label><input type="radio" name="programYear" value="Male"-->
+<!--                             th:field="*{programYear}" th:value="${y}"><span th:text="${y}"></span>Male</label>-->
+<!--            </span>-->
 
+
+            <label><input type="radio" name="programYear" value="Male">Male</label>
             <label><input type="radio" name="programYear" value="Female">Female</label>
 
 
