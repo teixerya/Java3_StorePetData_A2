@@ -50,12 +50,12 @@
 
             <span>
 <!--            <span th:each="y: ${#numbers.sequence(1,2)}">-->
-               <label><input type="radio" name="programYear" value="2"
-                             th:field="*{programYear}" th:value="${y}"><span th:text="${y}"></span></label>
+               <label><input type="radio" name="programYear" value="Male"
+                             th:field="*{programYear}" th:value="${y}"><span th:text="${y}"></span>Male</label>
             </span>
 
-            <label><input type="radio" name="programYear" value="2">2</label>
-            <label><input type="radio" name="programYear" value="3">3</label>
+            <label><input type="radio" name="programYear" value="Female">Female</label>
+
 
             <span th:if="${#fields.hasErrors('programYear')}"
                   class="error">&larr;&nbsp;<span th:errors="*{programYear}">Program Year Error</span></span>
