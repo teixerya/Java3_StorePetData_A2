@@ -38,7 +38,7 @@
         </p>
         <h2>Pet Info</h2>
         <p>
-            <label for="prog" class="group_label">Program</label><br>
+            <label for="prog" class="group_label">Pet Kind</label><br>
             <select id="prog" th:field="*{programName}">
                 <option th:each="p: ${programs}" th:value="${p}" th:text="${p}">--- Select Program ---</option>
             </select>
@@ -59,9 +59,9 @@
                   class="error">&larr;&nbsp;<span th:errors="*{programYear}">Program Year Error</span></span>
         </p>
         <p>
-            <label class="group_label">Options</label><br>
-            <label><input type="checkbox" th:field="*{programCoop}" th:value="yes"/>Co-op</label>
-            <label><input type="checkbox" th:field="*{programInternship}" th:value="yes"/>Internship</label>
+            <label class="group_label">Vaccination</label><br>
+            <label><input type="checkbox" th:field="*{programCoop}" th:value="yes"/>Vaccinated</label>
+
         </p>
         <p>
             <input type="reset" value="Clear"/>

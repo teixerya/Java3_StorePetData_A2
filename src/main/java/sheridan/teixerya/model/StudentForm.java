@@ -87,7 +87,6 @@ public class StudentForm implements Serializable {
             gender = "Female";
         }
 
-
     }
 
     public boolean isProgramCoop() {

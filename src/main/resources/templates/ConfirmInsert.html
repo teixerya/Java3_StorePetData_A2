@@ -23,7 +23,7 @@
             <span class="output" th:text="*{lastName}">Simpson</span>
         </p>
         <p>
-            <label class="group_label">Program:</label>
+            <label class="group_label">Pet Kind:</label>
             <span class="output" th:text="*{programName}">Computer Programmer</span>
         </p>
         <p>
@@ -31,13 +31,10 @@
             <span class="output" th:text="*{programYear}">1</span>
         </p>
         <p>
-            <label class="group_label">Co-op:</label>
+            <label class="group_label">Vaccinated:</label>
             <span class="output" th:text="*{programCoop}">yes</span>
         </p>
-        <p>
-            <label class="group_label">Internship:</label>
-            <span class="output" th:text="*{programInternship}">no</span>
-        </p>
+
     </div>
     <p><a href="Index.html" th:href="@{../Index}">Index</a></p>
     <p><a href="AddStudent.html" th:href="@{../AddStudent}">Add Student</a></p>
