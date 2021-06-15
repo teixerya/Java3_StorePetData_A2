@@ -22,10 +22,10 @@ public class StudentForm implements Serializable {
     @Pattern(regexp = "(Cat|Dog|Rabbit)?")
     private String programName = "Dog";
 
-    @NotNull
-    @Min(1)
-    @Max(2)
-    private int programYear = 1;
+//    @NotNull
+//    @Min(1)
+//    @Max(2)
+    private String programYear = "1";
 
     private String gender = "Male";
 
@@ -68,11 +68,11 @@ public class StudentForm implements Serializable {
         this.programName = program;
     }
 
-    public int getProgramYear() {
+    public String getProgramYear() {
         return programYear;
     }
 
-    public void setProgramYear(int year) {
+    public void setProgramYear(String year) {
         this.programYear = year;
     }
 

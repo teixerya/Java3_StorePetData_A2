@@ -3,7 +3,7 @@ CREATE TABLE student (
                          first_name VARCHAR(30),
                          last_name VARCHAR(30),
                          program_name VARCHAR(30),
-                         program_year INTEGER,
+                         program_year VARCHAR(30),
                          program_coop BOOLEAN,
                          program_internship BOOLEAN
 );

@@ -22,7 +22,7 @@ public class StudentEntityJpa {
     private String programName = "";
 
     @Column(name = "program_year")
-    private Integer programYear = 0;
+    private String programYear = "Female";
 
     @Column(name = "program_coop")
     private Boolean programCoop = false;
@@ -65,11 +65,11 @@ public class StudentEntityJpa {
         this.programName = programName;
     }
 
-    public Integer getProgramYear() {
+    public String getProgramYear() {
         return programYear;
     }
 
-    public void setProgramYear(Integer programYear) {
+    public void setProgramYear(String programYear) {
         this.programYear = programYear;
     }
 

@@ -47,14 +47,16 @@
         </p>
         <p>
             <label class="group_label">Gender</label><br>
-            <span th:each="y: ${#numbers.sequence(1,2)}">
+
+            <span>
+<!--            <span th:each="y: ${#numbers.sequence(1,2)}">-->
                <label><input type="radio" name="programYear" value="2"
                              th:field="*{programYear}" th:value="${y}"><span th:text="${y}"></span></label>
             </span>
-            <!--/*-->
+
             <label><input type="radio" name="programYear" value="2">2</label>
             <label><input type="radio" name="programYear" value="3">3</label>
-            <!--*/-->
+
             <span th:if="${#fields.hasErrors('programYear')}"
                   class="error">&larr;&nbsp;<span th:errors="*{programYear}">Program Year Error</span></span>
         </p>
