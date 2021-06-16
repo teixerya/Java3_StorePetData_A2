@@ -86,10 +86,10 @@ public class PetDataController {
         }
     }
 
-    @GetMapping("/ListStudents")
-    public ModelAndView listStudents() {
-        logger.trace("listStudents() is called");
-        List<PetForm> list = petDataService.getAllStudentForms();
+    @GetMapping("/ListPets")
+    public ModelAndView listPets() {
+        logger.trace("listPets() is called");
+        List<PetForm> list = petDataService.getAllPetForms();
         return new ModelAndView("ListPets",
                 "pets", list);
     }
@@ -97,7 +97,7 @@ public class PetDataController {
     @GetMapping("/DeleteAll")
     public String deleteAll(){
         logger.trace("deleteAll() is called");
-        petDataService.deleteAllStudentForms();
+        petDataService.deleteAllPetForms();
         return "redirect:ListStudents";
     }
 

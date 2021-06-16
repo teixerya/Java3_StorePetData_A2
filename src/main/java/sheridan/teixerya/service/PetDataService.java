@@ -8,9 +8,9 @@ public interface PetDataService {
 
     void insertPetForm(PetForm form);
 
-    List<PetForm> getAllStudentForms();
+    List<PetForm> getAllPetForms();
 
-    void deleteAllStudentForms();
+    void deleteAllPetForms();
 
     void deleteStudentForm(int id);
 

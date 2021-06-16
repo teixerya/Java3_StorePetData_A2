@@ -44,7 +44,7 @@ public class PetDataServiceJpaImpl implements PetDataService {
         form.setId(pet.getId());
     }
 
-    public List<PetForm> getAllStudentForms() {
+    public List<PetForm> getAllPetForms() {
         List<PetForm> formList = new ArrayList<>();
         List<PetEntityJpa> petList = petDataRepositoryJpa.findAll();
         for(PetEntityJpa pet: petList){
@@ -55,7 +55,7 @@ public class PetDataServiceJpaImpl implements PetDataService {
         return formList;
     }
 
-    public void deleteAllStudentForms() {
+    public void deleteAllPetForms() {
         petDataRepositoryJpa.deleteAll();
     }
 
