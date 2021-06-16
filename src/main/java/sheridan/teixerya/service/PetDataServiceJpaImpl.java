@@ -59,7 +59,7 @@ public class PetDataServiceJpaImpl implements PetDataService {
         petDataRepositoryJpa.deleteAll();
     }
 
-    public void deleteStudentForm(int id) {
+    public void deletePetForm(int id) {
         petDataRepositoryJpa.deleteById(id);
     }
 

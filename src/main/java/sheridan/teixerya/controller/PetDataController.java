@@ -98,17 +98,17 @@ public class PetDataController {
     public String deleteAll(){
         logger.trace("deleteAll() is called");
         petDataService.deleteAllPetForms();
-        return "redirect:ListStudents";
+        return "redirect:ListPets";
     }
 
-    @GetMapping("StudentDetails/{id}")
-    public String studentDetails(@PathVariable String id, Model model){
-        logger.trace("studentDetails() is called");
+    @GetMapping("PetDetails/{id}")
+    public String petDetails(@PathVariable String id, Model model){
+        logger.trace("petDetails() is called");
         try {
             PetForm form = petDataService.getPetForm(Integer.parseInt(id));
             if (form != null) {
                 model.addAttribute("pet", form);
-                return "PetDetails"; // show the student data in the form to edit
+                return "PetDetails"; // show the pet data in the form to edit
             } else {
                 logger.trace("no data for this id=" + id);
                 return "DataNotFound";
@@ -119,30 +119,30 @@ public class PetDataController {
         }
     }
 
-    // a user clicks "Delete" link (in the table) to "DeleteStudent"
-    @GetMapping("/DeleteStudent")
-    public String deleteStudent(@RequestParam String id, Model model) {
-        logger.trace("deleteStudent() is called");
+    // a user clicks "Delete" link (in the table) to "DeletePet"
+    @GetMapping("/DeletePet")
+    public String deletePet(@RequestParam String id, Model model) {
+        logger.trace("deletePet() is called");
         try {
             PetForm form = petDataService.getPetForm(Integer.parseInt(id));
             if (form != null) {
                 model.addAttribute("pet", form);
                 return "DeletePet"; // ask "Do you really want to remove?"
             } else {
-                return "redirect:ListStudents";
+                return "redirect:ListPets";
             }
         } catch (NumberFormatException e) {
-            return "redirect:ListStudents";
+            return "redirect:ListPets";
         }
     }
 
-    // a user clicks "Remove Record" button in "DeleteStudent" page,
-    // the form submits the data to "RemoveStudent"
-    @PostMapping("/RemoveStudent")
-    public String removeStudent(@RequestParam String id) {
-        logger.trace("removeStudent() is called");
+    // a user clicks "Remove Record" button in "DeletePet" page,
+    // the form submits the data to "RemovePet"
+    @PostMapping("/RemovePet")
+    public String removePet(@RequestParam String id) {
+        logger.trace("removePet() is called");
         try {
-            petDataService.deleteStudentForm(Integer.parseInt(id));
+            petDataService.deletePetForm(Integer.parseInt(id));
         } catch (NumberFormatException e) {
             logger.trace("the id is missing or not an integer");
         }

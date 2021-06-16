@@ -12,7 +12,7 @@ public interface PetDataService {
 
     void deleteAllPetForms();
 
-    void deleteStudentForm(int id);
+    void deletePetForm(int id);
 
     PetForm getPetForm(int id);
 
