@@ -19,37 +19,37 @@ public class PetDataServiceJpaImpl implements PetDataService {
         this.petDataRepositoryJpa = petDataRepositoryJpa;
     }
 
-    private static void copyFormToEntity(PetForm form, PetEntityJpa student){
-        //student.setId(form.getId());
-        student.setFirstName(form.getFirstName().trim());
-        student.setProgramName(form.getProgramName());
-        student.setProgramYear(form.getProgramYear());
-        student.setProgramCoop(form.isProgramCoop());
-        student.setProgramInternship(form.isProgramInternship());
+    private static void copyFormToEntity(PetForm form, PetEntityJpa pet){
+        //pet.setId(form.getId());
+        pet.setFirstName(form.getFirstName().trim());
+        pet.setProgramName(form.getProgramName());
+        pet.setProgramYear(form.getProgramYear());
+        pet.setProgramCoop(form.isProgramCoop());
+        pet.setProgramInternship(form.isProgramInternship());
     }
 
-    private static void copyEntityToForm(PetEntityJpa student, PetForm form){
-        form.setId(student.getId());
-        form.setFirstName(student.getFirstName().trim());
-        form.setProgramName(student.getProgramName());
-        form.setProgramYear(student.getProgramYear());
-        form.setProgramCoop(student.isProgramCoop());
-        form.setProgramInternship(student.isProgramInternship());
+    private static void copyEntityToForm(PetEntityJpa pet, PetForm form){
+        form.setId(pet.getId());
+        form.setFirstName(pet.getFirstName().trim());
+        form.setProgramName(pet.getProgramName());
+        form.setProgramYear(pet.getProgramYear());
+        form.setProgramCoop(pet.isProgramCoop());
+        form.setProgramInternship(pet.isProgramInternship());
     }
 
     public void insertStudentForm(PetForm form) {
-        PetEntityJpa student = new PetEntityJpa();
-        copyFormToEntity(form, student);
-        student = petDataRepositoryJpa.save(student);
-        form.setId(student.getId());
+        PetEntityJpa pet = new PetEntityJpa();
+        copyFormToEntity(form, pet);
+        pet = petDataRepositoryJpa.save(pet);
+        form.setId(pet.getId());
     }
 
     public List<PetForm> getAllStudentForms() {
         List<PetForm> formList = new ArrayList<>();
-        List<PetEntityJpa> studentList = petDataRepositoryJpa.findAll();
-        for(PetEntityJpa student: studentList){
+        List<PetEntityJpa> petList = petDataRepositoryJpa.findAll();
+        for(PetEntityJpa pet: petList){
             PetForm form = new PetForm();
-            copyEntityToForm(student, form);
+            copyEntityToForm(pet, form);
             formList.add(form);
         }
         return formList;

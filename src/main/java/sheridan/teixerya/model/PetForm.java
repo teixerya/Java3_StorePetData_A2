@@ -7,7 +7,6 @@ public class PetForm implements Serializable {
 
     private int id = 0;
 
-
     @NotBlank
     @Size(max = 30)
     @Pattern(regexp = "[A-Za-z]*")
@@ -18,8 +17,6 @@ public class PetForm implements Serializable {
     private String programName = "Dog";
 
     private String programYear = "Female";
-
-    private String gender = "Male";
 
     private boolean programCoop = false;
 
@@ -60,19 +57,6 @@ public class PetForm implements Serializable {
 
     public void setProgramYear(String year) {
         this.programYear = year;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(int year) {
-        if(year == 1){
-            gender = "Male";
-        }else{
-            gender = "Female";
-        }
-
     }
 
     public boolean isProgramCoop() {

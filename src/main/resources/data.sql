@@ -1,4 +1,4 @@
-INSERT INTO student
+INSERT INTO pet
 (first_name, last_name, program_name, program_year, program_coop, program_internship)
 VALUES
 ('Bart','Simpson','Cat','Male',true,false),

@@ -107,7 +107,7 @@ public class PetDataController {
         try {
             PetForm form = petDataService.getStudentForm(Integer.parseInt(id));
             if (form != null) {
-                model.addAttribute("student", form);
+                model.addAttribute("pet", form);
                 return "StudentDetails"; // show the student data in the form to edit
             } else {
                 logger.trace("no data for this id=" + id);
@@ -126,7 +126,7 @@ public class PetDataController {
         try {
             PetForm form = petDataService.getStudentForm(Integer.parseInt(id));
             if (form != null) {
-                model.addAttribute("student", form);
+                model.addAttribute("pet", form);
                 return "DeleteStudent"; // ask "Do you really want to remove?"
             } else {
                 return "redirect:ListStudents";

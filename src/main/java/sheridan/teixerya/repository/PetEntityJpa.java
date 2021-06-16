@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "student")
+@Table(name = "pet")
 public class PetEntityJpa {
 
     @Column(name = "id")
