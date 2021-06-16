@@ -1,7 +1,7 @@
 INSERT INTO pet
-(first_name, last_name, pet_kind, gender, vaccine)
+(first_name, pet_kind, gender, vaccine)
 VALUES
-('Bart','Simpson','Cat','Male',true,false),
-('Lisa','Simpson','Dog','Male',false,true),
-('Homer','Simpson','Rabbit','Female',false,false),
-('Marge','Simpson','Dog','Female',true,true);
+('Bart','Cat','Male',true,false),
+('Lisa','Dog','Male',false,true),
+('Homer','Rabbit','Female',false,false),
+('Marge','Dog','Female',true,true);
