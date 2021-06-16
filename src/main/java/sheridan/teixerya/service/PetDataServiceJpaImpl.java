@@ -22,19 +22,19 @@ public class PetDataServiceJpaImpl implements PetDataService {
     private static void copyFormToEntity(PetForm form, PetEntityJpa pet){
         //pet.setId(form.getId());
         pet.setFirstName(form.getFirstName().trim());
-        pet.setProgramName(form.getPetKind());
-        pet.setProgramYear(form.getGender());
-        pet.setProgramCoop(form.isVaccine());
-        pet.setProgramInternship(form.isProgramInternship());
+        pet.setPetKind(form.getPetKind());
+        pet.setGender(form.getGender());
+        pet.setVaccine(form.isVaccine());
+
     }
 
     private static void copyEntityToForm(PetEntityJpa pet, PetForm form){
         form.setId(pet.getId());
         form.setFirstName(pet.getFirstName().trim());
-        form.setPetKind(pet.getProgramName());
-        form.setGender(pet.getProgramYear());
-        form.setVaccine(pet.isProgramCoop());
-        form.setProgramInternship(pet.isProgramInternship());
+        form.setPetKind(pet.getPetKind());
+        form.setGender(pet.getGender());
+        form.setVaccine(pet.isVaccine());
+
     }
 
     public void insertPetForm(PetForm form) {

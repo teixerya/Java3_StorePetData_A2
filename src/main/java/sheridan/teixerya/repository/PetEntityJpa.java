@@ -13,19 +13,16 @@ public class PetEntityJpa {
     private Integer id;
 
     @Column(name = "first_name")
-    private String firstName = "";
+    private String firstName = ""
+    @Column(name = "pet_kind")
+    private String petKind = "";
 
-    @Column(name = "program_name")
-    private String programName = "";
+    @Column(name = "gender")
+    private String gender = "Female";
 
-    @Column(name = "program_year")
-    private String programYear = "Female";
+    @Column(name = "vaccine")
+    private Boolean vaccine = false;
 
-    @Column(name = "program_coop")
-    private Boolean programCoop = false;
-
-    @Column(name = "program_internship")
-    private Boolean programInternship = false;
 
     public PetEntityJpa(){
     };
@@ -46,36 +43,29 @@ public class PetEntityJpa {
         this.firstName = firstName;
     }
 
-    public String getProgramName() {
-        return programName;
+    public String getPetKind() {
+        return petKind;
     }
 
-    public void setProgramName(String programName) {
-        this.programName = programName;
+    public void setPetKind(String petKind) {
+        this.petKind = petKind;
     }
 
-    public String getProgramYear() {
-        return programYear;
+    public String getGender() {
+        return gender;
     }
 
-    public void setProgramYear(String programYear) {
-        this.programYear = programYear;
+    public void setGender(String programYear) {
+        this.gender = gender;
     }
 
-    public Boolean isProgramCoop() {
-        return programCoop;
+    public Boolean isVaccine() {
+        return vaccine;
     }
 
-    public void setProgramCoop(Boolean programCoop) {
-        this.programCoop = programCoop;
+    public void setVaccine(Boolean vaccine) {
+        this.vaccine = vaccine;
     }
 
-    public Boolean isProgramInternship() {
-        return programInternship;
-    }
-
-    public void setProgramInternship(Boolean programInternship) {
-        this.programInternship = programInternship;
-    }
 }
 
