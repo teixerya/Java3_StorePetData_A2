@@ -13,7 +13,7 @@ public class PetEntityJpa {
     private Integer id;
 
     @Column(name = "first_name")
-    private String firstName = ""
+    private String firstName = "";
     @Column(name = "pet_kind")
     private String petKind = "";
 

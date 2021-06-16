@@ -3,6 +3,6 @@ CREATE TABLE pet (
                          first_name VARCHAR(30),
                          pet_kind VARCHAR(30),
                          gender VARCHAR(30),
-                         vaccine BOOLEAN,
+                         vaccine BOOLEAN
 
 );
