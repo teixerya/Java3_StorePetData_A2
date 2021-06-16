@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Student Details</title>
+    <title>Pet Details</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css"/>
     <link th:href="@{../css/main.css}" href="../static/css/main.css"
           rel="stylesheet" type="text/css"/>
@@ -14,7 +14,7 @@
 </head>
 <body>
 <main>
-    <h1>Student Details</h1>
+    <h1>Pet Details</h1>
     <div th:object="${pet}">
         <p>
             <label class="group_label">Pet Name:</label>
@@ -35,10 +35,10 @@
         </p>
 
     </div>
-    <p><a href="EditStudent.html" th:href="@{../EditStudent(id=${pet.id})}">Edit Student</a></p>
+    <p><a href="EditPet.html" th:href="@{../EditPet(id=${pet.id})}">Edit Pet</a></p>
     <p><a href="Index.html" th:href="@{../Index}">Index</a></p>
-    <p><a href="AddStudent.html" th:href="@{../AddStudent}">Add Student</a></p>
-    <p><a href="ListStudents.html" th:href="@{../ListStudents}">List Students</a></p>
+    <p><a href="AddPet.html" th:href="@{../AddPet}">Add Pet</a></p>
+    <p><a href="ListPets.html" th:href="@{../ListPets}">List Pets</a></p>
 </main>
 </body>
 </html>

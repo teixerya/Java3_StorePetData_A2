@@ -35,14 +35,14 @@
 
     </div>
     <form method="post"
-          th:action="@{RemoveStudent}" action="ListStudents.html">
+          th:action="@{RemovePet}" action="ListPets.html">
         <input type="hidden" name="id" th:value="${pet.id}">
         <input type="submit" value="Remove Record">
     </form>
 
     <p><a href="Index.html" th:href="@{Index}">Index</a></p>
-    <p><a href="AddStudent.html" th:href="@{AddStudent}">Add Student</a></p>
-    <p><a href="ListStudents.html" th:href="@{ListStudents}">List Students</a></p>
+    <p><a href="AddPet.html" th:href="@{AddPet}">Add Pet</a></p>
+    <p><a href="ListPets.html" th:href="@{ListPets}">List Pets</a></p>
 </main>
 </body>
 </html>

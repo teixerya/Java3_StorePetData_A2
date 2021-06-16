@@ -25,11 +25,11 @@
             <td th:text="${s.firstName}">Bart</td>
 
             <td>
-                <a href="StudentDetails.html" th:href="@{StudentDetails/{id}(id=${s.id})}">Details</a>
+                <a href="PetDetails.html" th:href="@{PetDetails/{id}(id=${s.id})}">Details</a>
                 &nbsp;|&nbsp;
-                <a href="EditStudent.html" th:href="@{EditStudent(id=${s.id})}">Edit</a>
+                <a href="EditPet.html" th:href="@{EditPet(id=${s.id})}">Edit</a>
                 &nbsp;|&nbsp;
-                <a href="DeleteStudent.html" th:href="@{DeleteStudent(id=${s.id})}">Delete</a>
+                <a href="DeletePet.html" th:href="@{DeletePet(id=${s.id})}">Delete</a>
             </td>
         </tr>
         <!--/*-->
@@ -38,19 +38,19 @@
             <td>Lisa</td>
             <td>Simpson</td>
             <td>
-                <a href="StudentDetails.html">Details</a>
+                <a href="PetDetails.html">Details</a>
                 &nbsp;|&nbsp;
-                <a href="EditStudent.html">Edit</a>
+                <a href="EditPet.html">Edit</a>
                 &nbsp;|&nbsp;
-                <a href="DeleteStudent.html">Delete</a>
+                <a href="DeletePet.html">Delete</a>
             </td>
         </tr>
         <!--*/-->
     </table>
-    <p class="message" th:if="${#lists.isEmpty(pets)}">No student data</p>
+    <p class="message" th:if="${#lists.isEmpty(pets)}">No pet data</p>
     <p><a href="Index.html" th:href="@{Index}">Index</a></p>
-    <p><a href="AddStudent.html" th:href="@{AddStudent}">Add Student</a></p>
-    <p><a href="ListStudents.html" th:href="@{DeleteAll}">DeleteAll</a></p>
+    <p><a href="AddPet.html" th:href="@{AddPet}">Add Pet</a></p>
+    <p><a href="ListPets.html" th:href="@{DeleteAll}">DeleteAll</a></p>
 </main>
 </body>
 </html>

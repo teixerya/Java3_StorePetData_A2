@@ -40,7 +40,7 @@ public class PetDataController {
     public ModelAndView addStudent(){
         logger.trace("addStudent() is called");
         ModelAndView modelAndView =
-                new ModelAndView("AddStudent",
+                new ModelAndView("AddPet",
                         "form", new PetForm());
         modelAndView.addObject("programs", programs);
         return modelAndView;
@@ -57,7 +57,7 @@ public class PetDataController {
             logger.trace("input validation errors");
             //model.addAttribute("form", form);
             model.addAttribute("programs", programs);
-            return "AddStudent";
+            return "AddPet";
         } else {
             logger.trace("the user inputs are correct");
             petDataService.insertStudentForm(form);
@@ -90,7 +90,7 @@ public class PetDataController {
     public ModelAndView listStudents() {
         logger.trace("listStudents() is called");
         List<PetForm> list = petDataService.getAllStudentForms();
-        return new ModelAndView("ListStudents",
+        return new ModelAndView("ListPets",
                 "pets", list);
     }
 
@@ -108,7 +108,7 @@ public class PetDataController {
             PetForm form = petDataService.getStudentForm(Integer.parseInt(id));
             if (form != null) {
                 model.addAttribute("pet", form);
-                return "StudentDetails"; // show the student data in the form to edit
+                return "PetDetails"; // show the student data in the form to edit
             } else {
                 logger.trace("no data for this id=" + id);
                 return "DataNotFound";
@@ -127,7 +127,7 @@ public class PetDataController {
             PetForm form = petDataService.getStudentForm(Integer.parseInt(id));
             if (form != null) {
                 model.addAttribute("pet", form);
-                return "DeleteStudent"; // ask "Do you really want to remove?"
+                return "DeletePet"; // ask "Do you really want to remove?"
             } else {
                 return "redirect:ListStudents";
             }
@@ -158,7 +158,7 @@ public class PetDataController {
             if (form != null) {
                 model.addAttribute("form", form);
                 model.addAttribute("programs", programs);
-                return "EditStudent";
+                return "EditPet";
             } else {
                 logger.trace("no data for this id=" + id);
                 return "redirect:ListStudents";
@@ -181,7 +181,7 @@ public class PetDataController {
             logger.trace("input validation errors");
             //model.addAttribute("form", form);
             model.addAttribute("programs", programs);
-            return "EditStudent";
+            return "EditPet";
         } else {
             logger.trace("the user inputs are correct");
             petDataService.updateStudentForm(form);

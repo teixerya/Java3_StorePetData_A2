@@ -13,7 +13,7 @@
 <main>
     <h1>Edit Record</h1>
     <form method="post"
-          th:action="@{UpdateStudent}" action="StudentDetails.html"
+          th:action="@{UpdatePet}" action="PetDetails.html"
           th:object="${form}">
         <div th:if="${#fields.hasErrors('*')}">
             <h3 class="error">Input Errors</h3>
@@ -23,7 +23,7 @@
             </ul>
         </div>
         <input type="hidden" th:field="*{id}">
-        <h2>Student Name</h2>
+        <h2>Pet Name</h2>
         <p>
             <label for="first" class="group_label">First Name</label><br>
             <input id="first" type="text" th:field="*{firstName}" value="Bart"/>
@@ -31,7 +31,7 @@
                   class="error">&larr;&nbsp;<span th:errors="*{firstName}">First Name Error</span></span>
         </p>
 
-        <h2>Student Info:</h2>
+        <h2>Pet Info:</h2>
         <p>
             <label for="prog" class="group_label">Pet Kind</label><br>
             <select id="prog" th:field="*{programName}">
@@ -63,7 +63,7 @@
         </p>
     </form>
     <p><a href="Index.html" th:href="@{Index}">Index</a></p>
-    <p><a href="ListStudents.html" th:href="@{ListStudents}">List Students</a></p>
+    <p><a href="ListPets.html" th:href="@{ListPets}">List Pets</a></p>
 </main>
 </body>
 </html>

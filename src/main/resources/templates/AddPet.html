@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Add Student</title>
+    <title>Add Pet</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css"/>
     <link th:href="@{css/main.css}" href="../static/css/main.css" rel="stylesheet" type="text/css"/>
     <link th:href="@{css/footer.css}" href="../static/css/footer.css" rel="stylesheet" type="text/css"/>
@@ -13,7 +13,7 @@
 <main>
     <h1>Add Pet</h1>
     <form method="post"
-          th:action="@{InsertStudent}" action="ConfirmInsert.html"
+          th:action="@{InsertPet}" action="ConfirmInsert.html"
           th:object="${form}">
 
         <div th:if="${#fields.hasErrors('*')}">
@@ -63,7 +63,7 @@
         </p>
     </form>
     <p><a href="Index.html" th:href="@{Index}">Index</a></p>
-    <p><a href="ListStudents.html" th:href="@{ListStudents}">List Students</a></p>
+    <p><a href="ListPets.html" th:href="@{ListPets}">List Pets</a></p>
 </main>
 </body>
 </html>
