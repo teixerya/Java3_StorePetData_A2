@@ -14,7 +14,7 @@ public interface PetDataService {
 
     void deleteStudentForm(int id);
 
-    PetForm getStudentForm(int id);
+    PetForm getPetForm(int id);
 
     void updateStudentForm(PetForm form);
 }

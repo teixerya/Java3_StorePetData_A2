@@ -71,7 +71,7 @@ public class PetDataController {
         try {
             int id = Integer.parseInt(strId);
             logger.trace("looking for the data in the database");
-            PetForm form = petDataService.getStudentForm(id);
+            PetForm form = petDataService.getPetForm(id);
             if (form == null) {
                 logger.trace("no data for this id=" + id);
                 return "DataNotFound";
@@ -105,7 +105,7 @@ public class PetDataController {
     public String studentDetails(@PathVariable String id, Model model){
         logger.trace("studentDetails() is called");
         try {
-            PetForm form = petDataService.getStudentForm(Integer.parseInt(id));
+            PetForm form = petDataService.getPetForm(Integer.parseInt(id));
             if (form != null) {
                 model.addAttribute("pet", form);
                 return "PetDetails"; // show the student data in the form to edit
@@ -124,7 +124,7 @@ public class PetDataController {
     public String deleteStudent(@RequestParam String id, Model model) {
         logger.trace("deleteStudent() is called");
         try {
-            PetForm form = petDataService.getStudentForm(Integer.parseInt(id));
+            PetForm form = petDataService.getPetForm(Integer.parseInt(id));
             if (form != null) {
                 model.addAttribute("pet", form);
                 return "DeletePet"; // ask "Do you really want to remove?"
@@ -154,7 +154,7 @@ public class PetDataController {
     public String editStudent(@RequestParam String id, Model model) {
         logger.trace("editStudent() is called");
         try {
-            PetForm form = petDataService.getStudentForm(Integer.parseInt(id));
+            PetForm form = petDataService.getPetForm(Integer.parseInt(id));
             if (form != null) {
                 model.addAttribute("form", form);
                 model.addAttribute("programs", programs);

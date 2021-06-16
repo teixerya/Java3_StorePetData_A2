@@ -63,7 +63,7 @@ public class PetDataServiceJpaImpl implements PetDataService {
         petDataRepositoryJpa.deleteById(id);
     }
 
-    public PetForm getStudentForm(int id) {
+    public PetForm getPetForm(int id) {
         Optional<PetEntityJpa> result = petDataRepositoryJpa.findById(id);
         if(result.isPresent()){
             PetForm form = new PetForm();
