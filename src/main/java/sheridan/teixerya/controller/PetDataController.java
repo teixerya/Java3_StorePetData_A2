@@ -186,7 +186,7 @@ public class PetDataController {
             logger.trace("the user inputs are correct");
             petDataService.updatePetForm(form);
             logger.debug("id = " + form.getId());
-            return "redirect:StudentDetails/" + form.getId();
+            return "redirect:PetDetails/" + form.getId();
         }
     }
 }
