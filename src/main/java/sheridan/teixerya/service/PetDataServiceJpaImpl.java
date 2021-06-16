@@ -80,7 +80,7 @@ public class PetDataServiceJpaImpl implements PetDataService {
             PetEntityJpa pet = result.get();
             copyFormToEntity(form, pet);
             petDataRepositoryJpa.save(pet);
-            //studentRepository.flush();
+            //petRepository.flush();
         }
     }
 }
