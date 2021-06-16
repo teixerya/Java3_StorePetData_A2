@@ -3,7 +3,7 @@ package sheridan.teixerya.model;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 
-public class StudentForm implements Serializable {
+public class PetForm implements Serializable {
 
     private int id = 0;
 
@@ -25,7 +25,7 @@ public class StudentForm implements Serializable {
 
     private boolean programInternship = false;
 
-    public StudentForm() {
+    public PetForm() {
     }
 
     public int getId() {

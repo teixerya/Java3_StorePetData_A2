@@ -1,7 +1,7 @@
 package sheridan.teixerya.controller;
 
-import sheridan.teixerya.model.StudentForm;
-import sheridan.teixerya.service.StudentDataService;
+import sheridan.teixerya.model.PetForm;
+import sheridan.teixerya.service.PetDataService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -15,19 +15,19 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-public class StudentDataController {
+public class PetDataController {
 
-    private final Logger logger = LoggerFactory.getLogger(StudentDataController.class);
+    private final Logger logger = LoggerFactory.getLogger(PetDataController.class);
 
     private static final String[] programs = {
 
             "Cat", "Dog",
             "Rabbit"};
 
-    private final StudentDataService studentDataService;
+    private final PetDataService petDataService;
 
-    public StudentDataController(StudentDataService studentDataService){
-        this.studentDataService = studentDataService;
+    public PetDataController(PetDataService petDataService){
+        this.petDataService = petDataService;
     }
 
     @GetMapping(value={"/", "/Index"})
@@ -41,14 +41,14 @@ public class StudentDataController {
         logger.trace("addStudent() is called");
         ModelAndView modelAndView =
                 new ModelAndView("AddStudent",
-                        "form", new StudentForm());
+                        "form", new PetForm());
         modelAndView.addObject("programs", programs);
         return modelAndView;
     }
 
     @PostMapping("/InsertStudent")
     public String insertStudent(
-            @Validated @ModelAttribute("form") StudentForm form,
+            @Validated @ModelAttribute("form") PetForm form,
             BindingResult bindingResult,
             Model model){
         logger.trace("insertStudent() is called");
@@ -60,7 +60,7 @@ public class StudentDataController {
             return "AddStudent";
         } else {
             logger.trace("the user inputs are correct");
-            studentDataService.insertStudentForm(form);
+            petDataService.insertStudentForm(form);
             return "redirect:ConfirmInsert/" + form.getId();
         }
     }
@@ -71,7 +71,7 @@ public class StudentDataController {
         try {
             int id = Integer.parseInt(strId);
             logger.trace("looking for the data in the database");
-            StudentForm form = studentDataService.getStudentForm(id);
+            PetForm form = petDataService.getStudentForm(id);
             if (form == null) {
                 logger.trace("no data for this id=" + id);
                 return "DataNotFound";
@@ -89,7 +89,7 @@ public class StudentDataController {
     @GetMapping("/ListStudents")
     public ModelAndView listStudents() {
         logger.trace("listStudents() is called");
-        List<StudentForm> list = studentDataService.getAllStudentForms();
+        List<PetForm> list = petDataService.getAllStudentForms();
         return new ModelAndView("ListStudents",
                 "students", list);
     }
@@ -97,7 +97,7 @@ public class StudentDataController {
     @GetMapping("/DeleteAll")
     public String deleteAll(){
         logger.trace("deleteAll() is called");
-        studentDataService.deleteAllStudentForms();
+        petDataService.deleteAllStudentForms();
         return "redirect:ListStudents";
     }
 
@@ -105,7 +105,7 @@ public class StudentDataController {
     public String studentDetails(@PathVariable String id, Model model){
         logger.trace("studentDetails() is called");
         try {
-            StudentForm form = studentDataService.getStudentForm(Integer.parseInt(id));
+            PetForm form = petDataService.getStudentForm(Integer.parseInt(id));
             if (form != null) {
                 model.addAttribute("student", form);
                 return "StudentDetails"; // show the student data in the form to edit
@@ -124,7 +124,7 @@ public class StudentDataController {
     public String deleteStudent(@RequestParam String id, Model model) {
         logger.trace("deleteStudent() is called");
         try {
-            StudentForm form = studentDataService.getStudentForm(Integer.parseInt(id));
+            PetForm form = petDataService.getStudentForm(Integer.parseInt(id));
             if (form != null) {
                 model.addAttribute("student", form);
                 return "DeleteStudent"; // ask "Do you really want to remove?"
@@ -142,7 +142,7 @@ public class StudentDataController {
     public String removeStudent(@RequestParam String id) {
         logger.trace("removeStudent() is called");
         try {
-            studentDataService.deleteStudentForm(Integer.parseInt(id));
+            petDataService.deleteStudentForm(Integer.parseInt(id));
         } catch (NumberFormatException e) {
             logger.trace("the id is missing or not an integer");
         }
@@ -154,7 +154,7 @@ public class StudentDataController {
     public String editStudent(@RequestParam String id, Model model) {
         logger.trace("editStudent() is called");
         try {
-            StudentForm form = studentDataService.getStudentForm(Integer.parseInt(id));
+            PetForm form = petDataService.getStudentForm(Integer.parseInt(id));
             if (form != null) {
                 model.addAttribute("form", form);
                 model.addAttribute("programs", programs);
@@ -172,7 +172,7 @@ public class StudentDataController {
     // the form submits the data to "UpdateStudent"
     @PostMapping("/UpdateStudent")
     public String updateStudent(
-            @Validated @ModelAttribute("form") StudentForm form,
+            @Validated @ModelAttribute("form") PetForm form,
             BindingResult bindingResult,
             Model model) {
         logger.trace("updateStudent() is called");
@@ -184,7 +184,7 @@ public class StudentDataController {
             return "EditStudent";
         } else {
             logger.trace("the user inputs are correct");
-            studentDataService.updateStudentForm(form);
+            petDataService.updateStudentForm(form);
             logger.debug("id = " + form.getId());
             return "redirect:StudentDetails/" + form.getId();
         }
