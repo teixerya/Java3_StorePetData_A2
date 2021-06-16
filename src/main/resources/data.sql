@@ -1,5 +1,5 @@
 INSERT INTO pet
-(first_name, last_name, program_name, program_year, program_coop, program_internship)
+(first_name, last_name, pet_kind, gender, vaccine)
 VALUES
 ('Bart','Simpson','Cat','Male',true,false),
 ('Lisa','Simpson','Dog','Male',false,true),

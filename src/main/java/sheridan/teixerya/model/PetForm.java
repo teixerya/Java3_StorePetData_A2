@@ -14,13 +14,13 @@ public class PetForm implements Serializable {
 
     @NotBlank
     @Pattern(regexp = "(Cat|Dog|Rabbit)?")
-    private String programName = "Dog";
+    private String petKind = "Dog";
 
-    private String programYear = "Female";
+    private String gender = "Female";
 
-    private boolean programCoop = false;
+    private boolean vaccine = false;
 
-    private boolean programInternship = false;
+
 
     public PetForm() {
     }
@@ -43,37 +43,30 @@ public class PetForm implements Serializable {
 
 
 
-    public String getProgramName() {
-        return programName;
+    public String getPetKind() {
+        return petKind;
     }
 
-    public void setProgramName(String program) {
-        this.programName = program;
+    public void setPetKind(String program) {
+        this.petKind = program;
     }
 
-    public String getProgramYear() {
-        return programYear;
+    public String getGender() {
+        return gender;
     }
 
-    public void setProgramYear(String year) {
-        this.programYear = year;
+    public void setGender(String year) {
+        this.gender = year;
     }
 
-    public boolean isProgramCoop() {
-        return programCoop;
+    public boolean isVaccine() {
+        return vaccine;
     }
 
-    public void setProgramCoop(boolean coop) {
-        this.programCoop = coop;
+    public void setVaccine(boolean coop) {
+        this.vaccine = coop;
     }
 
-    public boolean isProgramInternship() {
-        return programInternship;
-    }
-
-    public void setProgramInternship(boolean internship) {
-        this.programInternship = internship;
-    }
 
 }
 

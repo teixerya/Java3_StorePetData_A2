@@ -35,11 +35,11 @@
         <h2>Pet Info</h2>
         <p>
             <label for="prog" class="group_label">Pet Kind</label><br>
-            <select id="prog" th:field="*{programName}">
+            <select id="prog" th:field="*{petKind}">
                 <option th:each="p: ${programs}" th:value="${p}" th:text="${p}">--- Select Pet ---</option>
             </select>
             <span th:if="${#fields.hasErrors('programName')}"
-                  class="error">&larr;&nbsp;<span th:errors="*{programName}">Program Name Error</span></span>
+                  class="error">&larr;&nbsp;<span th:errors="*{petKind}">Program Name Error</span></span>
         </p>
         <p>
             <label class="group_label">Gender</label><br>
@@ -50,11 +50,11 @@
 
 
             <span th:if="${#fields.hasErrors('programYear')}"
-                  class="error">&larr;&nbsp;<span th:errors="*{programYear}">Program Year Error</span></span>
+                  class="error">&larr;&nbsp;<span th:errors="*{gender}">Program Year Error</span></span>
         </p>
         <p>
             <label class="group_label">Vaccination</label><br>
-            <label><input type="checkbox" th:field="*{programCoop}" th:value="yes"/>Vaccinated</label>
+            <label><input type="checkbox" th:field="*{vaccine}" th:value="yes"/>Vaccinated</label>
 
         </p>
         <p>
