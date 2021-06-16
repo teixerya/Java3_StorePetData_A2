@@ -74,7 +74,7 @@ public class PetDataServiceJpaImpl implements PetDataService {
         return null;
     }
 
-    public void updateStudentForm(PetForm form) {
+    public void updatePetForm(PetForm form) {
         Optional<PetEntityJpa> result = petDataRepositoryJpa.findById(form.getId());
         if(result.isPresent()){
             PetEntityJpa pet = result.get();

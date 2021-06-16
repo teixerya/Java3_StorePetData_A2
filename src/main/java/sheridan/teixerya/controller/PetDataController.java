@@ -146,13 +146,13 @@ public class PetDataController {
         } catch (NumberFormatException e) {
             logger.trace("the id is missing or not an integer");
         }
-        return "redirect:ListStudents";
+        return "redirect:ListPets";
     }
 
-    // a user clicks "Edit" link (in the table) to "EditStudent"
-    @GetMapping("/EditStudent")
-    public String editStudent(@RequestParam String id, Model model) {
-        logger.trace("editStudent() is called");
+    // a user clicks "Edit" link (in the table) to "EditPet"
+    @GetMapping("/EditPet")
+    public String editPet(@RequestParam String id, Model model) {
+        logger.trace("editPet() is called");
         try {
             PetForm form = petDataService.getPetForm(Integer.parseInt(id));
             if (form != null) {
@@ -161,21 +161,21 @@ public class PetDataController {
                 return "EditPet";
             } else {
                 logger.trace("no data for this id=" + id);
-                return "redirect:ListStudents";
+                return "redirect:ListPets";
             }
         } catch (NumberFormatException e) {
             logger.trace("the id is missing or not an integer");
-            return "redirect:ListStudents";
+            return "redirect:ListPets";
         }
     }
 
-    // the form submits the data to "UpdateStudent"
-    @PostMapping("/UpdateStudent")
-    public String updateStudent(
+    // the form submits the data to "UpdatePet"
+    @PostMapping("/UpdatePet")
+    public String updatePet(
             @Validated @ModelAttribute("form") PetForm form,
             BindingResult bindingResult,
             Model model) {
-        logger.trace("updateStudent() is called");
+        logger.trace("updatePet() is called");
         // checking for the input validation errors
         if (bindingResult.hasErrors()) {
             logger.trace("input validation errors");
@@ -184,7 +184,7 @@ public class PetDataController {
             return "EditPet";
         } else {
             logger.trace("the user inputs are correct");
-            petDataService.updateStudentForm(form);
+            petDataService.updatePetForm(form);
             logger.debug("id = " + form.getId());
             return "redirect:StudentDetails/" + form.getId();
         }
