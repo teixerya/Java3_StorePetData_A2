@@ -37,8 +37,8 @@ public class PetDataController {
     }
 
     @GetMapping("/AddPet")
-    public ModelAndView addStudent(){
-        logger.trace("addStudent() is called");
+    public ModelAndView addPet(){
+        logger.trace("addPet() is called");
         ModelAndView modelAndView =
                 new ModelAndView("AddPet",
                         "form", new PetForm());
