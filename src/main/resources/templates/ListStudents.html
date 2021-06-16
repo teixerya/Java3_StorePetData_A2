@@ -12,14 +12,14 @@
 <body>
 <main>
     <h1>List All</h1>
-    <table th:unless="${#lists.isEmpty(students)}">
+    <table th:unless="${#lists.isEmpty(pets)}">
         <tr>
             <th>Pet Record Number</th>
             <th>Pet Name</th>
 
             <th>Options</th>
         </tr>
-        <tr th:each="s,c: ${students}">
+        <tr th:each="s,c: ${pets}">
             <td th:text="${c.count}">1</td>
 
             <td th:text="${s.firstName}">Bart</td>
@@ -47,7 +47,7 @@
         </tr>
         <!--*/-->
     </table>
-    <p class="message" th:if="${#lists.isEmpty(students)}">No student data</p>
+    <p class="message" th:if="${#lists.isEmpty(pets)}">No student data</p>
     <p><a href="Index.html" th:href="@{Index}">Index</a></p>
     <p><a href="AddStudent.html" th:href="@{AddStudent}">Add Student</a></p>
     <p><a href="ListStudents.html" th:href="@{DeleteAll}">DeleteAll</a></p>

@@ -15,7 +15,7 @@
 <body>
 <main>
     <h1>Student Details</h1>
-    <div th:object="${student}">
+    <div th:object="${pet}">
         <p>
             <label class="group_label">Pet Name:</label>
             <span class="output" th:text="*{firstName}">Bart</span>
@@ -35,7 +35,7 @@
         </p>
 
     </div>
-    <p><a href="EditStudent.html" th:href="@{../EditStudent(id=${student.id})}">Edit Student</a></p>
+    <p><a href="EditStudent.html" th:href="@{../EditStudent(id=${pet.id})}">Edit Student</a></p>
     <p><a href="Index.html" th:href="@{../Index}">Index</a></p>
     <p><a href="AddStudent.html" th:href="@{../AddStudent}">Add Student</a></p>
     <p><a href="ListStudents.html" th:href="@{../ListStudents}">List Students</a></p>

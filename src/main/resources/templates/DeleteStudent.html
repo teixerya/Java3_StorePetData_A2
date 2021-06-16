@@ -14,7 +14,7 @@
     <h1>Delete Record</h1>
     <p class="message">Do you really want to remove this record?</p>
     <h2>Record Data:</h2>
-    <div th:object="${student}">
+    <div th:object="${pet}">
         <p>
             <label class="group_label">First Name:</label>
             <span class="output" th:text="*{firstName}">Bart</span>
@@ -36,7 +36,7 @@
     </div>
     <form method="post"
           th:action="@{RemoveStudent}" action="ListStudents.html">
-        <input type="hidden" name="id" th:value="${student.id}">
+        <input type="hidden" name="id" th:value="${pet.id}">
         <input type="submit" value="Remove Record">
     </form>
 

@@ -91,7 +91,7 @@ public class PetDataController {
         logger.trace("listStudents() is called");
         List<PetForm> list = petDataService.getAllStudentForms();
         return new ModelAndView("ListStudents",
-                "students", list);
+                "pets", list);
     }
 
     @GetMapping("/DeleteAll")
