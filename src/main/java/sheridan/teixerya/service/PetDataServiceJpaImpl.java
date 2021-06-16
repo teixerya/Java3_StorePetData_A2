@@ -37,7 +37,7 @@ public class PetDataServiceJpaImpl implements PetDataService {
         form.setProgramInternship(pet.isProgramInternship());
     }
 
-    public void insertStudentForm(PetForm form) {
+    public void insertPetForm(PetForm form) {
         PetEntityJpa pet = new PetEntityJpa();
         copyFormToEntity(form, pet);
         pet = petDataRepositoryJpa.save(pet);

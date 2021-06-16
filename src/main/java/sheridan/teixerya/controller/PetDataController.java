@@ -46,12 +46,12 @@ public class PetDataController {
         return modelAndView;
     }
 
-    @PostMapping("/InsertStudent")
-    public String insertStudent(
+    @PostMapping("/InsertPet")
+    public String insertPet(
             @Validated @ModelAttribute("form") PetForm form,
             BindingResult bindingResult,
             Model model){
-        logger.trace("insertStudent() is called");
+        logger.trace("insertPet() is called");
         // checking for the input validation errors
         if (bindingResult.hasErrors()) {
             logger.trace("input validation errors");
@@ -60,7 +60,7 @@ public class PetDataController {
             return "AddPet";
         } else {
             logger.trace("the user inputs are correct");
-            petDataService.insertStudentForm(form);
+            petDataService.insertPetForm(form);
             return "redirect:ConfirmInsert/" + form.getId();
         }
     }

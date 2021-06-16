@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PetDataService {
 
-    void insertStudentForm(PetForm form);
+    void insertPetForm(PetForm form);
 
     List<PetForm> getAllStudentForms();
 
