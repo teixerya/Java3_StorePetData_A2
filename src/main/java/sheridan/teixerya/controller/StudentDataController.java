@@ -20,7 +20,7 @@ public class StudentDataController {
     private final Logger logger = LoggerFactory.getLogger(StudentDataController.class);
 
     private static final String[] programs = {
-            "--- Select Pet Kind ---",
+
             "Cat", "Dog",
             "Rabbit"};
 
