@@ -41,17 +41,24 @@
             <span th:if="${#fields.hasErrors('petKind')}" th:errors="*{petKind}"
                   class="error">&larr;&nbsp;<span th:errors="*{petKind}">Program Name Error</span></span>
         </p>
+
+
         <p>
             <label class="group_label">Gender</label><br>
 
 
-            <label><input type="radio" name="gender" value="Male">Male</label>
-            <label><input type="radio" name="gender" value="Female">Female</label>
+            <label><input type="radio" name="genderValue" value="Male">Male</label>
+            <label><input type="radio" name="genderValue" value="Female" >Female</label>
 
 
-            <span th:if="${#fields.hasErrors('gender')}"
-                  class="error">&larr;&nbsp;<span th:errors="*{gender}">Program Year Error</span></span>
+            <span th:if="${#fields.hasErrors('genderValue')}"
+                  class="error">&larr;&nbsp;<span th:errors="*{genderValue}">Program Year Error</span></span>
         </p>
+
+
+
+
+
         <p>
             <label class="group_label">Vaccination</label><br>
             <label><input type="checkbox" th:field="*{vaccine}" th:value="yes"/>Vaccinated</label>

@@ -1,7 +1,6 @@
 package sheridan.teixerya.repository;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "pet")
@@ -18,14 +17,14 @@ public class PetEntityJpa {
     private String petKind = "";
 
     @Column(name = "gender")
-    private String gender = "Female";
+    private String genderValue = "Female";
 
     @Column(name = "vaccine")
     private Boolean vaccine = false;
 
 
     public PetEntityJpa(){
-    };
+    }
 
     public Integer getId() {
         return id;
@@ -51,12 +50,12 @@ public class PetEntityJpa {
         this.petKind = petKind;
     }
 
-    public String getGender() {
-        return gender;
+    public String getGenderValue() {
+        return genderValue;
     }
 
-    public void setGender(String programYear) {
-        this.gender = gender;
+    public void setGenderValue(String programYear) {
+        this.genderValue = genderValue;
     }
 
     public Boolean isVaccine() {

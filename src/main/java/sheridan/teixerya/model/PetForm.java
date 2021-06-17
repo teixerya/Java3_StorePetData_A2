@@ -16,7 +16,7 @@ public class PetForm implements Serializable {
     @Pattern(regexp = "(Cat|Dog|Rabbit)?")
     private String petKind = "Dog";
 
-    private String gender = "Female";
+    private String genderValue = "Female";
 
     private boolean vaccine = false;
 
@@ -51,12 +51,14 @@ public class PetForm implements Serializable {
         this.petKind = program;
     }
 
-    public String getGender() {
-        return gender;
+    public String getGenderValue() {
+        System.out.println("getGenderValue method was called " + genderValue );
+        return genderValue;
     }
 
-    public void setGender(String year) {
-        this.gender = year;
+    public void setGenderValue(String genderInput) {
+        this.genderValue = genderInput;
+        System.out.println("The new gender is " + genderValue);
     }
 
     public boolean isVaccine() {

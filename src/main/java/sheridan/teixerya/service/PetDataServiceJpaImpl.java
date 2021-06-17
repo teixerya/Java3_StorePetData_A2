@@ -23,7 +23,9 @@ public class PetDataServiceJpaImpl implements PetDataService {
         //pet.setId(form.getId());
         pet.setFirstName(form.getFirstName().trim());
         pet.setPetKind(form.getPetKind());
-        pet.setGender(form.getGender());
+
+        pet.setGenderValue(form.getGenderValue());
+        System.out.println("Try to set a gender value for copyFormToEntity" + form.getGenderValue());
         pet.setVaccine(form.isVaccine());
 
     }
@@ -32,7 +34,7 @@ public class PetDataServiceJpaImpl implements PetDataService {
         form.setId(pet.getId());
         form.setFirstName(pet.getFirstName().trim());
         form.setPetKind(pet.getPetKind());
-        form.setGender(pet.getGender());
+        form.setGenderValue(pet.getGenderValue());
         form.setVaccine(pet.isVaccine());
 
     }
