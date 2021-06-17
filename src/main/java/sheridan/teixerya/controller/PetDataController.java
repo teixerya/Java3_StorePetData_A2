@@ -30,10 +30,13 @@ public class PetDataController {
         this.petDataService = petDataService;
     }
 
-    @GetMapping(value={"/", "/Index"})
-    public String index(){
-        logger.trace("index() is called");
-        return "Index";
+
+    @GetMapping(value={"/","/ListPets"})
+    public ModelAndView listPets() {
+        logger.trace("listPets() is called");
+        List<PetForm> list = petDataService.getAllPetForms();
+        return new ModelAndView("ListPets",
+                "pets", list);
     }
 
     @GetMapping("/AddPet")
@@ -86,13 +89,7 @@ public class PetDataController {
         }
     }
 
-    @GetMapping("/ListPets")
-    public ModelAndView listPets() {
-        logger.trace("listPets() is called");
-        List<PetForm> list = petDataService.getAllPetForms();
-        return new ModelAndView("ListPets",
-                "pets", list);
-    }
+
 
     @GetMapping("/DeleteAll")
     public String deleteAll(){
