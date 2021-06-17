@@ -23,7 +23,7 @@
                     class="error">Input Error</li>
             </ul>
         </div>
-        <h2>Pet Name</h2>
+        <h3>Pet Name</h3>
         <p>
             <label for="first" class="group_label">Name</label><br>
             <input id="first" type="text" th:field="*{firstName}"/>
@@ -32,7 +32,7 @@
         </p>
 
 
-        <h2>Pet Info</h2>
+        <h3>Pet Info</h3>
         <p>
             <label for="prog" class="group_label">Pet Kind</label><br>
             <select id="prog" th:field="*{petKind}">
@@ -46,7 +46,7 @@
 
 
             <label><input type="radio" name="gender" value="Male">Male</label>
-            <label><input type="radio" name="gender" value="Female">Female</label>
+            <label><input type="radio" name="gender" value="Female" >Female</label>
 
 
             <span th:if="${#fields.hasErrors('gender')}"
@@ -62,6 +62,8 @@
             <input type="submit" value="Send"/>
         </p>
     </form>
+
+    <img src ="../static/img/dogCatRabbit.png" th:src="@{/img/dogCatRabbit.png}" width="500" height="250"/>
 
     <p><a href="ListPets.html" th:href="@{ListPets}">List Pets</a></p>
 </main>

@@ -44,6 +44,11 @@ h2 {
     font-size: 24px;
 }
 
+h3{
+    text-decoration: underline;
+    text-underline: orange;
+}
+
 table {
     margin-left: 2em;
     margin-bottom: 2em;

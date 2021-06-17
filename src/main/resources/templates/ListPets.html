@@ -48,7 +48,10 @@
         <!--*/-->
     </table>
 
-    <img src ="../static/img/Sully_Cali.jpg" th:src="@{/img/Sully_Cali.jpg}"/>
+    <img src ="../static/img/Sully_Cali.jpg" th:src="@{/img/Sully_Cali.jpg}" width="250" height="250"/>
+    <img src ="../static/img/Dobbie.jpg" th:src="@{/img/Dobbie.jpg}" width="250" height="250"/>
+
+
 
     <p class="message" th:if="${#lists.isEmpty(pets)}">No pet data</p>
     <p><a href="AddPet.html" th:href="@{AddPet}">Add Pet</a></p>
