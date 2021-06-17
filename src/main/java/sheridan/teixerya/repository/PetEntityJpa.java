@@ -50,13 +50,16 @@ public class PetEntityJpa {
         this.petKind = petKind;
     }
 
+
     public String getGenderValue() {
         return genderValue;
     }
 
-    public void setGenderValue(String programYear) {
+    public void setGenderValue(String genderInput) {
         this.genderValue = genderValue;
     }
+
+
 
     public Boolean isVaccine() {
         return vaccine;
