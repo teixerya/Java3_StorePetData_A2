@@ -55,7 +55,7 @@ public class PetEntityJpa {
         return genderValue;
     }
 
-    public void setGenderValue(String genderInput) {
+    public void setGenderValue(String genderValue) {
         this.genderValue = genderValue;
     }
 
