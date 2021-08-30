@@ -8,6 +8,17 @@ main{
 label.group_label{
     color: black;
     font-size: 20px;
+
+}
+
+label{
+    display: inline-block;
+    text-align: left;
+}
+
+div {
+    display: inline-block;
+    text-align: center;
 }
 
 input, select{
@@ -36,17 +47,11 @@ span.output{
 
 h1{
     color: black;
-    text-shadow: 2px 2px 5px #81c784;
+    text-shadow: 0px 0px 2px #F76F8E;
 }
 
 h2 {
-    color: darkorange;
-    font-size: 24px;
-}
-
-h3{
-    text-decoration: underline;
-    text-underline: orange;
+    color: #00bcd4;
 }
 
 table {
@@ -79,4 +84,25 @@ td {
     font-size: larger;
     font-weight: bolder;
     color: #ff9800;
+}
+
+form {
+    display: inline-block;
+
+}
+
+body{
+    text-align:center;
+    font-size: 22px;
+}
+
+table{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+img{
+
+    margin-left:auto;
+    margin-right:auto;
 }

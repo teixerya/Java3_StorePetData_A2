@@ -1,4 +1,8 @@
 footer{
+
+    position:fixed;
+    bottom: 0;
+
     font-size: 1.2em;
     font-style: italic;
     font-weight: bolder;
@@ -8,8 +12,9 @@ footer{
     margin-left: 0.5em;
     padding-left: 0.5em;
     margin-top: 1.5em;
-    width: 18em;
-    color: #546e7a;
+    width: 100%;
+    color: white;
+    background-color: black;
 }
 
 footer .apple{
